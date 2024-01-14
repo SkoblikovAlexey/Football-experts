@@ -1,0 +1,8 @@
+email_validator
+Flask
+Flask-mailman
+Flask-Security-Too[common]
+Flask-SQLAlchemy
+Flask-WTF
+python-dotenv
+requests

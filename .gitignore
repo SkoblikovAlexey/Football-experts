@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.idea/
+.venv/
+__pycache__/
+node_modules/
+package-lock.json
+sessions/
+venv/
+yarn.lock
+*.pyc
+*.sqlite
