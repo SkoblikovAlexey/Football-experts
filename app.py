@@ -12,12 +12,25 @@ def before_request():
         "title": "Сделать прогноз",
         "url": "predictions",
     }, {
-        "title": "Контакты",
-        "url": "contacts",
+        "title": "Рекорды",
+        "url": "records",
     }, {
-        "title": "Предложения по улучшению сайта",
-        "url": "suggestions_improvement",
-    }, {
-        "title": "Таблица РПЛ",
-        "url": "show_table",
+        "title": "Результаты матчей",
+        "url": "results",
     }]
+
+@app.get("/")
+def index():
+    return render_template("index.j2")
+
+@app.get("/predictions")
+def predictions():
+    return render_template("predictions.j2")
+
+@app.get("/records")
+def records():
+    return render_template("records.j2")
+
+@app.get("/results")
+def results():
+    return render_template("results.j2")
