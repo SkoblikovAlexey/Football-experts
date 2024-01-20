@@ -1,0 +1,12 @@
+{% extends "base.j2" %}
+
+{% set page = "predictions" %}
+
+{% block title %}
+  <h1>Сделайте свой прогноз</h1>
+  {# {% if not current_user.is_authenticated %}
+    <p>Привет, неопознанный енот</p>
+  {% else %}
+    <p> Привет, <b>{{ current_user.username }}</b></p>
+  {% endif %} #}
+{% endblock title %}
