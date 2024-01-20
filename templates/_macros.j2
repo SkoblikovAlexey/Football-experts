@@ -1,0 +1,13 @@
+{% macro menu(items, current='index') %}
+  {% for link in items %}
+    {% if link.url == current %}
+      <li class="active">
+        <a class="nav-link" aria-current="page" href="{{ url_for(link.url) }}">{{ link.title }}</a>
+      </li>
+    {% else %}
+      <li>
+        <a class="nav-link" href="{{ url_for(link.url) }}">{{ link.title }}</a>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
