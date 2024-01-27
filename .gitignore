@@ -3,6 +3,7 @@
 .idea/
 .venv/
 __pycache__/
+log/
 node_modules/
 package-lock.json
 sessions/

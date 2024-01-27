@@ -1,8 +1,16 @@
 email_validator
 Flask
+Flask-Executor
 Flask-mailman
+Flask-Migrate
+flask-minify
+Flask-Reuploaded
 Flask-Security-Too[common]
+Flask-Session
 Flask-SQLAlchemy
+flask-uploads
 Flask-WTF
+loguru
 python-dotenv
 requests
+git+https://github.com/jokerinteractive/flask-resize@master
