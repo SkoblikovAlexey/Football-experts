@@ -41,13 +41,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joker-core/core.git"
+    "url": "git+https://github.com/SkoblikovAlexey/Football-experts.git"
   },
   "author": "Joker Interactive",
   "license": "Commercial",
   "bugs": {
-    "url": "https://github.com/joker-core/core/issues"
+    "url": "https://github.com/SkoblikovAlexey/Football-experts/issues"
   },
-  "homepage": "https://github.com/joker-core/core#readme",
+  "homepage": "https://github.com/SkoblikovAlexey/Football-experts#readme",
   "type": "module"
 }
