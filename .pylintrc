@@ -1,0 +1,15 @@
+[MASTER]
+init-hook='import sys; sys.path.append(".")'
+disable=
+    C0114, # missing-module-docstring[FORMAT]
+    C0115, # missing-class-docstring
+    C0116, # missing-function-docstring
+    C0411,
+    E1101,
+
+[FORMAT]
+max-line-length=120
+indent-after-paren=4
+
+[TYPECHECK]
+ignored-classes=SQLAlchemy,scoped-session

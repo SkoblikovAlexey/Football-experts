@@ -1,0 +1,53 @@
+{
+  "name": "football-experts",
+  "version": "0.1.0",
+  "description": "Football Experts",
+  "private": true,
+  "devDependencies": {
+    "browser-sync": "latest",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-cheerio": "latest",
+    "gulp-concat": "latest",
+    "gulp-dart-sass": "latest",
+    "gulp-libsquoosh": "latest",
+    "gulp-notify": "latest",
+    "gulp-plumber": "latest",
+    "gulp-postcss": "latest",
+    "gulp-rename": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-svgmin": "latest",
+    "gulp-svgstore": "latest",
+    "postcss-scss": "latest",
+    "stylelint": "latest",
+    "stylelint-config-recess-order": "latest",
+    "stylelint-config-standard": "latest",
+    "stylelint-scss": "latest"
+  },
+  "browserslist": [
+    "last 2 version",
+    "> 2%"
+  ],
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp start",
+    "fix:styles": "stylelint \"app/sass/**/*.scss\" --config .stylelintrc --fix",
+    "fix:python": "black . && ruff --fix .",
+    "lint:styles": "stylelint \"app/sass/**/*.scss\" --config .stylelintrc",
+    "lint:templates": "djlint app/templates --lint --configuration .djlintrc",
+    "lint:python": "black --check . && ruff check .",
+    "lint": "npm run lint:styles && npm run lint:templates && npm run lint:python"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkoblikovAlexey/Football-experts.git"
+  },
+  "author": "Joker Interactive",
+  "license": "Commercial",
+  "bugs": {
+    "url": "https://github.com/SkoblikovAlexey/Football-experts/issues"
+  },
+  "homepage": "https://github.com/SkoblikovAlexey/Football-experts#readme",
+  "type": "module"
+}
