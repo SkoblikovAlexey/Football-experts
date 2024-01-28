@@ -1,0 +1,24 @@
+{% extends "base.j2" %}
+
+{% set title = "Список прогнозов" %}
+
+{% block title %}
+  <div class="col-lg-5 ml-auto">
+    <h1 class="text-white">Список прогнозов</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
+  </div>
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul>
+          {% for p_id in predictions %}
+            <li><a href="{{ url_for('prediction.item', prediction_id=p_id) }}">Прогноз {{ p_id }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
