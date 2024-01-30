@@ -2,6 +2,8 @@
 .env
 .idea/
 .venv/
+.vscode/
+build/
 __pycache__/
 node_modules/
 package-lock.json

@@ -1,0 +1,22 @@
+{% extends "base.j2" %}
+{% from "_macros.j2" import checkbox, errors, field_with_errors, form_errors, prop_next %}
+
+{% block content %}
+  <div class="form-security w-50 m-auto">
+    <form action="{{ url_for_security('login') }}{{ prop_next() }}" method="post" name="login_user_form">
+      {{ login_user_form.hidden_tag() }}
+      <h1 class="h3 mb-3 fw-normal">Вход</h1>
+      {{ form_errors(login_user_form) }}
+      {{ errors(login_user_form.csrf_token) }}
+      <div class="input-group">
+        {{ field_with_errors(login_user_form.email) }}
+        <span class="input-group-text">или</span>
+        {{ field_with_errors(login_user_form.username) }}
+      </div>
+      {{ field_with_errors(login_user_form.password) }}
+      {{ checkbox(login_user_form.remember) }}
+      <button class="btn btn-primary w-100 py-2" type="submit">Войти</button>
+      <a class="btn btn-link" href="{{ url_for_security('send_confirmation') }}">Подтверждение регистрации</a>
+    </form>
+  </div>
+{% endblock content %}

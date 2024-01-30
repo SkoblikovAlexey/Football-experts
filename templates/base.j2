@@ -46,6 +46,18 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 {{ menu(g.main_menu, page) }}
+                {# {% if not current_user.is_authenticated %}
+                <li>
+                  <a class="nav-link" href="{{ url_for_security('login') }}">Войти</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="{{ url_for_security('register') }}">Регистрация</a>
+                </li>
+              {% else %}
+                <li>
+                  <a class="nav-link" href="{{ url_for_security('logout') }}">Выйти <small>({{ current_user.email }})</small></a>
+                </li>
+              {% endif %} #}
                 {# <li class="active"><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="matches.html" class="nav-link">Matches</a></li>
                 <li><a href="players.html" class="nav-link">Players</a></li>

@@ -1,3 +1,80 @@
+{% macro input(field) %}
+  <div class="form-floating mb-2">
+    {% if field.errors %}
+      {% set className = 'form-control is-invalid' %}
+    {% else %}
+      {% set className = 'form-control' %}
+    {% endif %}
+    {{ field(class=className, placeholder="") }}
+    {{ field.label }}
+    {% if field.errors %}
+      <ul class="invalid-feedback">
+      {% for error in field.errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro checkbox(field) %}
+  <div class="form-check text-start my-3">
+    {{ field(class="form-check-input") }}
+    {{ field.label }}
+  </div>
+{% endmacro %}
+
+{% macro form_errors(form) %}
+  {% if form.form_errors %}
+    <div class="fs-div" id="fs-form-errors">
+      <ul>
+        {% for error in form.form_errors %}<li class="fs-error-msg">{{ error }}</li>{% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+{% endmacro %}
+
+{% macro field_with_errors(field) %}
+  <div class="form-floating" id="{{ field.id|default('fs-field') }}">
+    {% if field.errors %}
+      {% set className = 'form-control is-invalid' %}
+    {% else %}
+      {% set className = 'form-control' %}
+    {% endif %}
+    {{ field(class=className, placeholder="") }}
+    {{ field.label }}
+    {% if field.errors %}
+      <ul class="invalid-feedback">
+      {% for error in field.errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endmacro %}
+
+{% macro errors(field) %}
+  {% if field.errors %}
+    <ul class="invalid-feedback">
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}
+
+{# {% macro menu(items, current='index') %}
+  {% for link in items %}
+    <li class="nav-item">
+      {% if link.url == current %}
+        <a class="nav-link px-3 text-secondary" aria-current="page" href="{{ url_for(link.url) }}">{{ link.title }}</a>
+      {% else %}
+        <a class="nav-link px-3 text-white" href="{{ url_for(link.url) }}">{{ link.title }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+{% endmacro %} #}
+
 {% macro menu(items, current='index') %}
   {% for link in items %}
     {% if link.url == current %}
@@ -10,4 +87,8 @@
       </li>
     {% endif %}
   {% endfor %}
+{% endmacro %}
+
+{% macro prop_next() -%}
+  {% if 'next' in request.args %}?next={{ request.args.next|urlencode }}{% endif %}
 {% endmacro %}

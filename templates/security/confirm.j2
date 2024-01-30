@@ -1,0 +1,14 @@
+{% extends "base.j2" %}
+{% from "_macros.j2" import errors, input, form_errors %}
+
+{% block content %}
+  <div class="form-security w-50 m-auto">
+    <form action="{{ url_for_security('send_confirmation') }}" method="post" name="send_confirmation_form">
+      {{ send_confirmation_form.hidden_tag() }}
+      <h1 class="h3 mb-3 fw-normal">Подтверждение регистрации</h1>
+      {{ input(send_confirmation_form.email) }}
+      <button class="btn btn-primary w-100 py-2" type="submit">Подтверждение регистрации</button>
+      <a class="btn btn-link" href="{{ url_for_security('login') }}">Войти</a>
+    </form>
+  </div>
+{% endblock content %}
