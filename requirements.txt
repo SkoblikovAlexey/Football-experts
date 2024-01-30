@@ -13,4 +13,6 @@ Flask-WTF
 loguru
 python-dotenv
 requests
+setuptools
+tzdata
 git+https://github.com/jokerinteractive/flask-resize@master
