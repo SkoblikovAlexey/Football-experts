@@ -8,7 +8,6 @@ Flask-Reuploaded
 Flask-Security-Too[common]
 Flask-Session
 Flask-SQLAlchemy
-flask-uploads
 Flask-WTF
 loguru
 python-dotenv
