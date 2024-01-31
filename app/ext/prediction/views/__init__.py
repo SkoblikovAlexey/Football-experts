@@ -5,10 +5,10 @@ prediction = Blueprint("prediction", __name__, template_folder="templates")
 
 @prediction.get("")
 def list():
-    prediction_list = [1, 2, 3]
-    return render_template("prediction/list.j2", predictions=prediction_list)
+    tours_list = [1, 2, 3]
+    return render_template("prediction/list.j2", tours=tours_list)
 
 
-@prediction.get("/<int:prediction_id>")
-def item(prediction_id):
-    return render_template("prediction/item.j2", prediction_id=prediction_id)
+@prediction.get("/<int:tour_id>")
+def item(tour_id):
+    return render_template("prediction/item.j2", tour_id=tour_id)

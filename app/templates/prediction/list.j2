@@ -1,10 +1,10 @@
 {% extends "base.j2" %}
 
-{% set title = "Список прогнозов" %}
+{% set title = "Список туров" %}
 
 {% block title %}
   <div class="col-lg-5 ml-auto">
-    <h1 class="text-white">Список прогнозов</h1>
+    <h1 class="text-white">Список туров</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
   </div>
 {% endblock title %}
@@ -14,8 +14,8 @@
     <div class="row">
       <div class="col-lg-12">
         <ul>
-          {% for p_id in predictions %}
-            <li><a href="{{ url_for('prediction.item', prediction_id=p_id) }}">Прогноз {{ p_id }}</a></li>
+          {% for t_id in tours %}
+            <li><a href="{{ url_for('prediction.item', tour_id=t_id) }}">Тур {{ t_id }}</a></li>
           {% endfor %}
         </ul>
       </div>
