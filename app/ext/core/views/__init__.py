@@ -55,6 +55,9 @@ def before_app_request():
     }, {
         "title": "Рекорды",
         "url": "record.records",
+    }, {
+        "title": "Предложения",
+        "url": "suggestion.list",
     }]
 
 

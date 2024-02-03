@@ -1,11 +1,11 @@
 {% extends "base.j2" %}
 
-{% set title = "Прогнозы" %}
-{% set page = "prediction.list" %}
+{% set title = "Предложения" %}
+{% set page = "suggestion.list" %}
 
 {% block title %}
   <div class="col-lg-5 ml-auto">
-    <h1 class="text-white">Список туров</h1>
+    <h1 class="text-white">Список предложений по улучшению сайта</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
   </div>
 {% endblock title %}
@@ -15,8 +15,8 @@
     <div class="row">
       <div class="col-lg-12">
         <ul>
-          {% for t_id in tours %}
-            <li><a href="{{ url_for('prediction.item', tour_id=t_id) }}">Тур {{ t_id }}</a></li>
+          {% for s_id in suggestions %}
+            <li><a href="{{ url_for('suggestion.item', suggestion_id=s_id) }}">Предложение №{{ s_id }}</a></li>
           {% endfor %}
         </ul>
       </div>
