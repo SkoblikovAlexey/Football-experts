@@ -43,21 +43,18 @@ def init_request():
 @core.before_app_request
 def before_app_request():
     g.current_year = datetime.now(tz=TZ).year
-    g.menu = [{
+    g.main_menu = [{
         "title": "Главная",
-        "url": "index",
+        "url": "core.index",
     }, {
         "title": "Сделать прогноз",
-        "url": "predictions",
+        "url": "prediction.list",
     }, {
         "title": "Результаты",
-        "url": "results",
-    }, {
-        "title": "Предложения по улучшению сайта",
-        "url": "suggestions_improvement",
+        "url": "result.list",
     }, {
         "title": "Рекорды",
-        "url": "records",
+        "url": "record.records",
     }]
 
 
