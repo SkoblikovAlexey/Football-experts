@@ -50,14 +50,14 @@ def before_app_request():
         "title": "Сделать прогноз",
         "url": "predictions",
     }, {
-        "title": "Контакты",
-        "url": "contacts",
+        "title": "Результаты",
+        "url": "results",
     }, {
         "title": "Предложения по улучшению сайта",
         "url": "suggestions_improvement",
     }, {
-        "title": "Таблица РПЛ",
-        "url": "show_table",
+        "title": "Рекорды",
+        "url": "records",
     }]
 
 
