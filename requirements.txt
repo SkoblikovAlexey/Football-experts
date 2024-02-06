@@ -10,6 +10,7 @@ Flask-Session
 Flask-SQLAlchemy
 Flask-WTF
 loguru
+PyMySQL
 python-dotenv
 requests
 setuptools

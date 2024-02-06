@@ -98,10 +98,14 @@ class DevelopmentConfig(BaseConfig):
     SECRET_KEY = os.getenv("SECRET_KEY", "liualdsknbkjzxcvoaewrASDV76s!@#$%^&*")
     SECURITY_EMAIL_VALIDATOR_ARGS = {"check_deliverability": False}
 
-    DB_DRIVER = "sqlite+pysqlite"
-    DB_FILE_NAME = f'{os.getenv("DB_FILE_NAME", "app")}.db'
-    DB_PATH = os.path.join(BASE_DIR, DB_FILE_NAME)
-    SQLALCHEMY_DATABASE_URI = f"{DB_DRIVER}:///{DB_PATH}"
+    DB_DRIVER = "mysql+pymysql"
+    DB_USERNAME = os.getenv("DB_USERNAME")
+    DB_PASSWORD = os.getenv("DB_PASSWORD")
+    DB_HOST = os.getenv("DB_HOST", "localhost")
+    DB_NAME = os.getenv("DB_NAME")
+    # DB_FILE_NAME = f'{os.getenv("DB_FILE_NAME", "app")}.db'
+    # DB_PATH = os.path.join(BASE_DIR, DB_FILE_NAME)
+    SQLALCHEMY_DATABASE_URI = f"{DB_DRIVER}://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}?charset=utf8mb4"
 
 
 class TestingConfig(DevelopmentConfig):
