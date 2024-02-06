@@ -1,4 +1,4 @@
-{% macro menu(items, current='index') %}
+{% macro menu(items, current='core.index') %}
   {% for link in items %}
     {% if link.url == current %}
       <li class="active">

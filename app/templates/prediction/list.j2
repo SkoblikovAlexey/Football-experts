@@ -1,0 +1,25 @@
+{% extends "base.j2" %}
+
+{% set title = "Прогнозы" %}
+{% set page = "prediction.list" %}
+
+{% block title %}
+  <div class="col-lg-5 ml-auto">
+    <h1 class="text-white">Список туров</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
+  </div>
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul>
+          {% for t_id in tours %}
+            <li><a href="{{ url_for('prediction.item', tour_id=t_id) }}">Тур {{ t_id }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

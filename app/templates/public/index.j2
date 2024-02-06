@@ -1,5 +1,41 @@
 {% extends "base.j2" %}
 
+{% set page = "core.index" %}
+{% set title = "Футбольные эксперты" %}
+
+
+{% block title %}
+  {% if not current_user.is_authenticated %}
+    <p>Привет, неопознанный енот</p>
+  {% else %}
+    <p> Привет, <b>{{ current_user.username }}</b></p>
+  {% endif %}
+  <h1>До начала тура</h1>
+  <div id="date-countdown"></div>
+  <a href="{{ url_for('prediction.list') }}" class="btn btn-primary py-3 px-4 mr-3">Сделать прогноз на следующий тур</a>
+{% endblock title %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="d-flex team-vs">
+        <div class="team-1 w-50">
+          <div class="team-details w-100 text-center">
+            <h2>Турнирная таблица</h2>
+          </div>
+        </div>
+        <div class="team-2 w-50">
+          <div class="team-details w-100 text-center">
+            <h2>Таблица РПЛ</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+
+{# {% extends "base.j2" %}
+
 {% set title = "Главная страница" %}
 
 {% block title %}
@@ -315,4 +351,4 @@
       </div>
     </div>
   </div>
-{% endblock subcontent %}
+{% endblock subcontent %} #}

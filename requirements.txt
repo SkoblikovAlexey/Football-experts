@@ -8,9 +8,11 @@ Flask-Reuploaded
 Flask-Security-Too[common]
 Flask-Session
 Flask-SQLAlchemy
-flask-uploads
 Flask-WTF
 loguru
+PyMySQL
 python-dotenv
 requests
+setuptools
+tzdata
 git+https://github.com/jokerinteractive/flask-resize@master

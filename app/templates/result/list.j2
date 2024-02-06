@@ -1,0 +1,25 @@
+{% extends "base.j2" %}
+
+{% set title = "Результаты" %}
+{% set page = "result.list" %}
+
+{% block title %}
+  <div class="col-lg-5 ml-auto">
+    <h1 class="text-white">Список результатов туров</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
+  </div>
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul>
+          {% for t_id in tours %}
+            <li><a href="{{ url_for('result.item', tour_id=t_id) }}">Результаты {{ t_id }} тура</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
