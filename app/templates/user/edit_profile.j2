@@ -1,0 +1,15 @@
+{% extends "admin/base.j2" %}
+{% from 'macros/form.j2' import base, btn, render_field_errors %}
+
+{% block admin_content %}
+  <h1>Изменить</h1>
+  <form action="{{ url_for('user.edit') }}" method="post">
+    {{ form.hidden_tag() }}
+    {{ render_field_errors(form.csrf_token) }}
+    {{ base(form.username) }}
+    {{ base(form.firstname) }}
+    {{ base(form.lastname) }}
+    {{ base(form.phone) }}
+    {{ btn(form.submit) }}
+  </form>
+{% endblock admin_content %}
