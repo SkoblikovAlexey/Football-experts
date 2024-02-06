@@ -34,7 +34,7 @@ def init_request():
 @core.before_app_request
 def before_app_request():
     g.current_year = datetime.now(tz=TZ).year
-    g.main_menu_not_auth = [{
+    base_menu = [{
         "title": "Главная",
         "url": "core.index",
     }, {
@@ -49,32 +49,25 @@ def before_app_request():
     }, {
         "title": "Предложения",
         "url": "suggestion.list",
-    }, {
-        "title": "Войти",
-        "url": "security.login",
-    }, {
-        "title": "Регистрация",
-        "url": "security.register",
     }]
-    g.main_menu_auth = [{
-        "title": "Главная",
-        "url": "core.index",
-    }, {
-        "title": "Сделать прогноз",
-        "url": "prediction.list",
-    }, {
-        "title": "Результаты",
-        "url": "result.list",
-    }, {
-        "title": "Рекорды",
-        "url": "record.records",
-    }, {
-        "title": "Предложения",
-        "url": "suggestion.list",
-    }, {
-        "title": "Выйти",
-        "url": "security.logout",
-    }]
+
+    g.main_menu_not_auth = [
+        *base_menu,
+        {
+            "title": "Войти",
+            "url": "security.login",
+        }, {
+            "title": "Регистрация",
+            "url": "security.register",
+        }
+    ]
+    g.main_menu_auth = [
+        *base_menu,
+        {
+            "title": "Выйти",
+            "url": "security.logout",
+        }
+    ]
 
 
 @core.get("")
