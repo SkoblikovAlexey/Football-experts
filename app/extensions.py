@@ -10,13 +10,8 @@ from flask_wtf.csrf import CSRFProtect
 from sqlalchemy.orm import DeclarativeBase, MappedAsDataclass
 
 
-# TODO: вынести в другое место
-class Base(DeclarativeBase, MappedAsDataclass):
-    """subclasses will be converted to dataclasses"""
-    pass
-
 csrf = CSRFProtect()
-db = SQLAlchemy(model_class=Base)
+db = SQLAlchemy()
 executor = Executor()
 mail = Mail()
 migrate = Migrate()
