@@ -17,5 +17,5 @@ class EditProfileForm(FlaskForm):
 class ExtendedRegisterForm(RegisterForm):
     """Расширенная форма регистрации."""
 
-    first_name = StringField("Имя", [DataRequired()])
-    last_name = StringField("Фамилия", [DataRequired()])
+    firstname = StringField("Имя", [DataRequired()])
+    lastname = StringField("Фамилия", [DataRequired()])
