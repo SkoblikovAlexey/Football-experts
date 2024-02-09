@@ -19,16 +19,15 @@ def init_request():
             name="admin",
             permissions={"admin-read", "admin-write", "user-read", "user-write"},
         )
-        if not user_datastore.find_user(email="admin@z-gu.ru"):
+        if not user_datastore.find_user(email="happycow32@yandex.ru"):
             user_datastore.create_user(
                 username="admin",
-                email="admin@z-gu.ru",
+                email="happycow32@yandex.ru",
                 password=hash_password("123456"),
                 roles=["admin"],
             )
     except OperationalError as msg:
         abort(500, msg)
-
 
 
 @core.before_app_request
