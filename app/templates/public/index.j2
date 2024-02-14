@@ -5,14 +5,16 @@
 
 
 {% block title %}
-  {% if not current_user.is_authenticated %}
-    <p>Привет, неопознанный енот</p>
-  {% else %}
-    <p> Привет, <b>{{ current_user.username }}</b></p>
-  {% endif %}
-  <h1>До начала тура</h1>
-  <div id="date-countdown"></div>
-  <a href="{{ url_for('prediction.list') }}" class="btn btn-primary py-3 px-4 mr-3">Сделать прогноз на следующий тур</a>
+  <div class="col-lg-6 ml-auto">
+    {% if not current_user.is_authenticated %}
+      <p>Привет, неопознанный енот</p>
+    {% else %}
+      <p> Привет, <b>{{ current_user.username }}</b></p>
+    {% endif %}
+    <h1>До начала тура</h1>
+    <div id="date-countdown"></div>
+    <a href="{{ url_for('prediction.list') }}" class="btn btn-primary py-3 px-4 mr-3">Сделать прогноз на следующий тур</a>
+  </div>
 {% endblock title %}
 
 {% block content %}
