@@ -46,6 +46,9 @@
                   {{ menu(g.main_menu_not_auth, page) }}
                 {% else %}
                   {{ menu(g.main_menu_auth, page) }}
+                  <li class="li-lk">
+                    <a class="nav-link" href="{{ url_for('user.index') }}"></a>
+                  </li>
                 {% endif %}
               </ul>
             </nav>

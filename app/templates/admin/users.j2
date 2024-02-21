@@ -23,7 +23,7 @@
           {{ icon(icon_name, width=20, height=20) }} {{ user.username }}
         </td>
         <td>
-          <a href="{{ url_for('admin.user_roles', user_id=user.id) }}">change</a>
+          <a href="{{ url_for('admin.user_roles', user_id=user.id) }}">изменить</a>
           [
           {% for role in user.roles %}
             {{ role.name }}

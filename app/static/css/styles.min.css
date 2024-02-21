@@ -1,6 +1,6 @@
 body {
   line-height: 1.7;
-  color: gray;
+  color: white;
   font-weight: 300;
   background-color: #222831;
   font-size: 16px;
@@ -353,6 +353,14 @@ h1, h2, h3, h4, h5,
 }
 .site-navbar .site-navigation .site-menu {
   margin-bottom: 0;
+}
+.site-navbar .site-navigation .site-menu .li-lk {
+  width: 55px;
+  height: 30px;
+  background: no-repeat center url("../images/lk-icon.png");
+}
+.site-navbar .site-navigation .site-menu .li-lk:hover {
+  opacity: 0.3;
 }
 .site-navbar .site-navigation .site-menu .active > a {
   display: inline-block;

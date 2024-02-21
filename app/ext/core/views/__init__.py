@@ -65,6 +65,9 @@ def before_app_request():
         {
             "title": "Выйти",
             "url": "security.logout",
+        }, {
+            "title": "LK",
+            "url": "user.index",
         }
     ]
 

@@ -1,16 +1,16 @@
 body {
 	line-height: 1.7;
-	color: lighten($black, 50%);
+	color: white;
 	font-weight: 300;
-	
+
 	background-color: #222831;
 	font-size: 16px;
 }
-::-moz-selection { 
+::-moz-selection {
 	background: $black;
 	color: $white;
 }
-::selection { 
+::selection {
 	background: $black;
 	color: $white;
 }
@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5,
 		width: 100%;
 		z-index: 2;
 		// overflow: hidden;
-		
+
 		&:before {
 			opacity: 1;
 			visibility: visible;
@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5,
 
 		&.btn-outline-black {
 			color: $black;
-			background-color: transparent;	
+			background-color: transparent;
 			&:hover {
 				border-color: $black;
 				background: $black;
@@ -130,7 +130,7 @@ h1, h2, h3, h4, h5,
 
 		&.btn-outline-white {
 			color: $white;
-			background-color: transparent;	
+			background-color: transparent;
 			&:hover {
 				border-color: $white;
 				background: $white;
@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5,
 			}
 		}
 	}
-	
+
 }
 
 .line-height-1 {
@@ -273,7 +273,7 @@ h1, h2, h3, h4, h5,
 	position: relative;
 	transition: .3s all ease-in-out;
 	> span {
-		font-size: 50px;	
+		font-size: 50px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
