@@ -19,6 +19,10 @@ def init_request():
             name="admin",
             permissions={"admin-read", "admin-write", "user-read", "user-write"},
         )
+        user_datastore.find_or_create_role(
+            name="user",
+            permissions={"user-read", "user-write"},
+        )
         if not user_datastore.find_user(email="happycow32@yandex.ru"):
             user_datastore.create_user(
                 username="admin",
