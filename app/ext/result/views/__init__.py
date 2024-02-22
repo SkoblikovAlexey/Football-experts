@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, g, render_template
 
 from app.utils import calc_points
 
@@ -13,6 +13,8 @@ def list():
 
 @result.get("/<int:tour_id>")
 def item(tour_id):
+    g.breadcrumbs = [{"controller": ".list", "title": "Список результатов туров"}, {"title": f"Результаты {tour_id} тура"}]
+
     results = [{
         "title": "Спартак — Зенит",
         "result": "2:1",

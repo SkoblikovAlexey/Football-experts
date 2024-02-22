@@ -68,6 +68,21 @@
             {% endfor %}
           {% endif %}
         {% endwith %}
+
+        {% if g.breadcrumbs %}
+          <nav class="mt-3" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ url_for('core.index') }}">Главная</a></li>
+              {% for link in g.breadcrumbs %}
+                {% if link.controller %}
+                  <li class="breadcrumb-item"><a href="{{ url_for(link.controller) }}">{{ link.title }}</a></li>
+                {% else %}
+                  <li class="breadcrumb-item active" aria-current="page">{{ link.title }}</li>
+                {% endif %}
+              {% endfor %}
+            </ol>
+          </nav>
+        {% endif %}
       </div>
     </header>
     <div class="hero overlay" style="background-image: url({{ url_for('static', filename='images/bg_3.jpg') }});">
