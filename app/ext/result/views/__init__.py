@@ -36,6 +36,18 @@ def item(tour_id):
         "title": "Рубин — Ахмат",
         "result": "2:0",
         "predict": "0:1",
+    }, {
+        "title": "Пари НН — Факел",
+        "result": "2:0",
+        "predict": "2:1",
+    }, {
+        "title": "Оренбург — Балтика",
+        "result": "2:0",
+        "predict": "0:1",
+    }, {
+        "title": "Сочи — Локомотив",
+        "result": "2:0",
+        "predict": "2:1",
     }]
 
     final_score = 0
