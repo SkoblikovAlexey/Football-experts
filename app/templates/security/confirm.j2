@@ -1,6 +1,6 @@
 {% extends "base.j2" %}
 
-{% from 'macros/form.j2' import base, btn, render_field_errors %}
+{% from 'macros/form.j2' import bs_text, bs_btn, render_field_errors %}
 {% set meta_title = 'Подтверждение регистрации' %}
 {% block content %}
   <div class="col-lg-4 ml-auto">
@@ -9,8 +9,8 @@
       <form class="form" action="{{ url_for_security('send_confirmation') }}" method="post" name="send_confirmation_form">
         {{ send_confirmation_form.hidden_tag() }}
         {{ render_field_errors(send_confirmation_form.csrf_token) }}
-        {{ base(send_confirmation_form.email) }}
-        {{ btn(send_confirmation_form.submit, value='Отправить повторно') }}
+        {{ bs_text(send_confirmation_form.email) }}
+        {{ bs_btn(send_confirmation_form.submit, value='Отправить повторно') }}
       </form>
       <footer class="main__footer">
         <p class="main__text"><a href="{{ url_for_security('login') }}">Вход</a></p>

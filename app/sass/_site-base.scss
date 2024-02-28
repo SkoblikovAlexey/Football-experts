@@ -147,22 +147,22 @@ h1, h2, h3, h4, h5,
 .bg-black {
 	background: $black;
 }
-.form-control {
-	height: 43px;
-	border-radius: 4px;
-	background: none;
-	border-width: 1px;
-	color: $white!important;
-	border-color: rgba($white, .2);
-	font-family: $font-family-sans-serif;
-	&:active, &:focus {
-		border-color: $primary;
-		background: none;
-	}
-	&:hover, &:active, &:focus {
-		box-shadow: none!important;
-	}
-}
+// .form-control {
+// 	height: 43px;
+// 	border-radius: 4px;
+// 	background: none;
+// 	border-width: 1px;
+// 	color: $white!important;
+// 	border-color: rgba($white, .2);
+// 	font-family: $font-family-sans-serif;
+// 	&:active, &:focus {
+// 		border-color: $primary;
+// 		background: none;
+// 	}
+// 	&:hover, &:active, &:focus {
+// 		box-shadow: none!important;
+// 	}
+// }
 
 .site-section {
 	padding: 2.5em 0;
