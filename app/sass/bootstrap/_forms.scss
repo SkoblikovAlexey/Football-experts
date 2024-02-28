@@ -36,7 +36,6 @@
 
   // Customize the `:focus` state to imitate native WebKit styles.
   @include form-control-focus();
-
   // Placeholder
   &::placeholder {
     color: $input-placeholder-color;

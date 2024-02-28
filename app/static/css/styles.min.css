@@ -138,24 +138,6 @@ h1, h2, h3, h4, h5,
   background: #000;
 }
 
-.form-control {
-  height: 43px;
-  border-radius: 4px;
-  background: none;
-  border-width: 1px;
-  color: #fff !important;
-  border-color: rgba(255, 255, 255, 0.2);
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-.form-control:active, .form-control:focus {
-  border-color: #ee1e46;
-  background: none;
-}
-.form-control:hover, .form-control:active, .form-control:focus {
-  -webkit-box-shadow: none !important;
-          box-shadow: none !important;
-}
-
 .site-section {
   padding: 2.5em 0;
 }
