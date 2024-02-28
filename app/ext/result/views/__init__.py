@@ -7,13 +7,14 @@ result = Blueprint("result", __name__, template_folder="templates")
 
 @result.get("")
 def list():
+    g.breadcrumbs = [{"title": "Результаты по турам"}]
     result_list = [1, 2, 3]
     return render_template("result/list.j2", tours=result_list)
 
 
 @result.get("/<int:tour_id>")
 def item(tour_id):
-    g.breadcrumbs = [{"controller": ".list", "title": "Список результатов туров"}, {"title": f"Результаты {tour_id} тура"}]
+    g.breadcrumbs = [{"controller": ".list", "title": "Результаты по турам"}, {"title": f"Результаты {tour_id} тура"}]
 
     results = [{
         "title": "Спартак — Зенит",
@@ -43,7 +44,7 @@ def item(tour_id):
         final_score += match["score"]
 
     tour_results = {
-        "title": "Матчи первого тура (2024)",
+        "title": f"Матчи {tour_id} тура (2024)",
         "final_score": final_score,
         "results": results
     }
