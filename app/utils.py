@@ -23,3 +23,18 @@ def url_for_resize(
     except ImageNotFoundError as err:
         current_app.logger.error(f"Изображение '{filename}' не найдено {err}")
     return url_for("static", filename="images/no-image.jpg")
+
+
+def calc_points(result: str, predict: str|None):
+    if result == predict:
+        return 4
+    diff_result = int(result.split(":")[0]) - int(result.split(":")[1])
+    if predict:
+        diff_predict = int(predict.split(":")[0]) - int(predict.split(":")[1])
+    else:
+        return 0
+    if diff_result == diff_predict:
+        return 3
+    if (diff_result > 0 and diff_predict > 0) or ( diff_result < 0 and diff_predict < 0):
+        return 2
+    return 0

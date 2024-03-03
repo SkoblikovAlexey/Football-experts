@@ -5,7 +5,6 @@
 {% block title %}
   <div class="col-lg-5 ml-auto">
     <h1 class="text-white">Результаты {{ tour_id }} тура</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, molestias repudiandae pariatur.</p>
   </div>
 {% endblock title %}
 
@@ -13,7 +12,33 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <p>В разработке...</p>
+        <table class="table table-striped table-bordered table-dark table-hover">
+          <caption>Результаты {{ tour_id }} тура</caption>
+          <thead>
+            <tr>
+              <th scope="col">{{ tour_results.title }}</th>
+              <th scope="col">Результаты матча</th>
+              <th scope="col">Ваш прогноз</th>
+              <th scope="col">Начислено очков</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for match in tour_results.results %}
+              <tr>
+                <th scope="row">{{ match.title }}</th>
+                <td>{{ match.result }}</td>
+                <td>{{ match.predict if match.predict else "_:_" }}</td>
+                <td><span class="badge badge-info">{{ match.score }}</span></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+          <tfoot>
+            <tr class="bg-info">
+              <th scope="col" colspan="3">Всего очков за тур</th>
+              <th scope="col">{{ tour_results.final_score }}</th>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
   </div>

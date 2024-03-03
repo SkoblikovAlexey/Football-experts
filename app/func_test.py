@@ -41,6 +41,7 @@ def calc_points(predict: list, res: list):
             elif (diff_predict > 0 and diff_res > 0) or (diff_predict < 0 and diff_res < 0):
                 points += 2
     return points
+
 class test_user:
     def __init__(self, firstname, lastname):
         self.firstname = firstname

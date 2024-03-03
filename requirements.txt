@@ -1,3 +1,4 @@
+cryptography
 email_validator
 Flask
 Flask-Executor
