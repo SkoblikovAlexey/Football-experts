@@ -67,11 +67,11 @@ def before_app_request():
     g.main_menu_auth = [
         *base_menu,
         {
+            "title": "Личный кабинет",
+            "url": "user.index",
+        }, {
             "title": "Выйти",
             "url": "security.logout",
-        }, {
-            "title": "LK",
-            "url": "user.index",
         }
     ]
 
