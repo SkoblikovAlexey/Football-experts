@@ -56,7 +56,7 @@ class BaseConfig:
     SECURITY_TOTP_SECRETS = {"1": "ZjQ9Qa31VOrfEzuPy4VHQWPCTmRzCnFzMKLxXYiZu8A"}
 
     SECURITY_PASSWORD_LENGTH_MIN = 5
-    SECURITY_POST_LOGIN_VIEW = "/lk"
+    SECURITY_POST_LOGIN_VIEW = "/profile"
     SECURITY_EMAIL_SENDER = (BASE_APP_NAME, "team@jokerinteractive.ru")
 
     SECURITY_LOGIN_USER_TEMPLATE = "security/login.j2"

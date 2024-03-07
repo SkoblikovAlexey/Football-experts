@@ -1,10 +1,10 @@
 .hero {
-	
+
 	background-size: cover;
 	background-position: center center;
 	&, > .container > .row {
 		height: 100vh;
-		min-height: 500px;	
+		min-height: 500px;
 	}
 	&.overlay {
 		&:before {
@@ -287,12 +287,12 @@
 				font-size: 18px;
 			}
 		}
-	} 
+	}
 }
 
 .widget-next-match {
 	border: 1px solid rgba($white, .1);
-	
+
 }
 .widget-vs {
 	width: 100%;
@@ -517,9 +517,9 @@
 	// padding: 25px;
 	font-size: 15px;
 	width: 100%;
-	
+
 	float: left;
-	
+
 	// background: $white;
 	*:last-child {
 		margin-bottom: 0;
@@ -624,7 +624,7 @@
 }
 
 .search-form {
-	
+
 	.form-group {
 		position: relative;
 		input {

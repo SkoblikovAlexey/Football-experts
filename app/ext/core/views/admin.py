@@ -20,7 +20,7 @@ admin = Blueprint("admin", __name__, template_folder="templates")
 @roles_accepted("admin")
 def index():
     """Главная страница админки."""
-    g.breadcrumbs = [{"title": "Админка"}]
+    g.breadcrumbs = [{"controller": "user.index", "title": "Личный кабинет"}, {"title": "Админка"}]
     admin_links = [
         {
             "controller": "admin.settings",

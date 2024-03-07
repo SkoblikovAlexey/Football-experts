@@ -4,6 +4,10 @@
       <li class="active">
         <a class="nav-link" aria-current="page" href="{{ url_for(link.url) }}">{{ link.title }}</a>
       </li>
+      {% elif link.special %}
+        <li class="li-lk">
+          <a class="nav-link" aria-current="page" href="{{ url_for(link.url) }}">{{ link.title }}</a>
+        </li>
     {% else %}
       <li>
         <a class="nav-link" href="{{ url_for(link.url) }}">{{ link.title }}</a>
