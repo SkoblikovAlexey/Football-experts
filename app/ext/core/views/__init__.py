@@ -8,6 +8,7 @@ from sqlalchemy.exc import OperationalError
 from app.ext.core.models import user_datastore
 from app.extensions import csrf, db
 from config import TZ
+import json
 
 
 core = Blueprint("core", __name__, template_folder="templates")
@@ -80,5 +81,8 @@ def before_app_request():
 @core.get("")
 def index():
     """Главная страница."""
-    return render_template("public/index.j2", index=True)
+
+    with open('app/parsing/rpl_parse/premierliga.json', 'r', encoding='utf-8') as json_table:
+        rpl_table = json.load(json_table)
+    return render_template("public/index.j2", index=True, rpl_table=rpl_table)
 
