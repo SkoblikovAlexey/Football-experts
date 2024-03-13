@@ -82,7 +82,7 @@ def before_app_request():
 def index():
     """Главная страница."""
 
-    with open('app/parsing/rpl_parse/premierliga.json', 'r', encoding='utf-8') as json_table:
+    with open('rpl_parse/rpl_parse/premierliga.json', 'r', encoding='utf-8') as json_table:
         rpl_table = json.load(json_table)
     return render_template("public/index.j2", index=True, rpl_table=rpl_table)
 
