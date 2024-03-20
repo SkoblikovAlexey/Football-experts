@@ -16,6 +16,7 @@ class Role(db.Model, FsRoleMixin):
 class User(db.Model, FsUserMixin):
     firstname = db.Column(db.String(255))
     lastname = db.Column(db.String(255))
+    predicts = db.relationship("Predict", back_populates="user")
 
 
 class Photo(db.Model, ModelMixin):

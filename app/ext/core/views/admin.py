@@ -1,4 +1,5 @@
 import os
+import requests
 from importlib import import_module
 
 from alembic.migration import MigrationContext
@@ -8,6 +9,7 @@ from sqlalchemy import create_engine
 
 from app.exceptions import ExtNotValidError
 from app.ext.core.models import Role, Setting, User, user_datastore
+from app.ext.result.models import Match
 from app.extensions import db
 from config import EXT_DIR
 from version import __version__
@@ -139,3 +141,15 @@ def user_role_delete(user_id, role_id):
     db.session.commit()
     flash(f"Роль {role_db.name} удалена для {user_db.email}", "warning")
     return redirect(url_for("admin.user_roles", user_id=user_id))
+
+@admin.post("/get-results")
+@roles_accepted("admin")
+def get_results ():
+    "Получение результатов матчей с помощью запроса на оф. сайт РПЛ"
+    tournament = requests.post('https://premierliga.ru/ajax/match/', data=[('ajaxAction','getHeaderCalendar'), ('tournament', 1)])
+    for i in range(len(tournament.json()['contents'])):
+        match = Match(tournament.json()['contents'][i])
+        db.session.add(match)
+    db.session.commit()
+    flash("Результаты матчей добавлены в базу данных", "success")
+    return render_template("admin/index.j2", admin_links=admin_links)
