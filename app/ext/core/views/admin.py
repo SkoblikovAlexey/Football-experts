@@ -34,6 +34,11 @@ def index():
             "title": "Пользователи",
             "icon": "users",
         },
+        {
+            "controller": "admin.get_results",
+            "title": "Получить результаты",
+            "icon": "get_results",
+        },
     ]
 
     return render_template("admin/index.j2", admin_links=admin_links)
@@ -142,14 +147,17 @@ def user_role_delete(user_id, role_id):
     flash(f"Роль {role_db.name} удалена для {user_db.email}", "warning")
     return redirect(url_for("admin.user_roles", user_id=user_id))
 
-@admin.post("/get-results")
+@admin.post("")
 @roles_accepted("admin")
-def get_results ():
+def get_results():
     "Получение результатов матчей с помощью запроса на оф. сайт РПЛ"
     tournament = requests.post('https://premierliga.ru/ajax/match/', data=[('ajaxAction','getHeaderCalendar'), ('tournament', 1)])
+    print(tournament.json()['contents'])
     for i in range(len(tournament.json()['contents'])):
         match = Match(tournament.json()['contents'][i])
+        # match.save()
         db.session.add(match)
     db.session.commit()
-    flash("Результаты матчей добавлены в базу данных", "success")
-    return render_template("admin/index.j2", admin_links=admin_links)
+    print(match)
+    flash(f"Результаты матчей добавлены в базу данных", "success")
+    return redirect(url_for("admin.index", admin_links=admin_links))
